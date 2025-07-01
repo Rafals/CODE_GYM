@@ -1,23 +1,36 @@
-💻 CodeGym Java Projects – Moje portfolio
-To repozytorium zawiera zestaw projektów i zadań wykonanych w trakcie kursu CodeGym – Java Developer. Projekty obejmują różne aspekty języka Java, od podstaw składni po programowanie obiektowe, kolekcje, wątki i pracę z plikami.
+# 💻 CodeGym Java Projects – Moje portfolio
 
-📚 Co znajdziesz w repozytorium:
-✅ Zadania z kursu CodeGym – poziomy 1–40.
+To repozytorium zawiera zestaw projektów i zadań wykonanych w trakcie kursu **CodeGym – Java Developer**.  
+Projekty obejmują różne aspekty języka Java – od podstaw składni po programowanie obiektowe, kolekcje, wątki i pracę z plikami.
 
-✅ Małe aplikacje konsolowe, symulacje i algorytmy.
+---
 
-✅ Przykłady OOP, obsługi wyjątków, kolekcji i streamów.
+## 📚 Co znajdziesz w repozytorium:
 
-✅ Projekty końcowe z kursu.
+✅ Zadania z kursu CodeGym – poziomy **1–40**  
+✅ Małe aplikacje konsolowe, symulacje i algorytmy  
+✅ Przykłady OOP, obsługi wyjątków, kolekcji i streamów  
+✅ Projekty końcowe z kursu
 
-🎯 Dlaczego to repozytorium?
-Te zadania pokazują mój rozwój jako programisty Java, systematyczne podejście do nauki oraz praktyczne zrozumienie zagadnień. Traktuję je jako podstawę do dalszego rozwoju – w tym większych aplikacji, projektów własnych i komercyjnych.
+---
 
-🛠 Technologie:
-Java 21+
+## 🎯 Dlaczego to repozytorium?
 
-IntelliJ IDEA / VS Code
+Te zadania pokazują mój rozwój jako programisty Java, systematyczne podejście do nauki oraz praktyczne zrozumienie zagadnień.  
+Traktuję je jako **bazę pod większe aplikacje**, projekty własne oraz przyszłe wdrożenia komercyjne.
 
-Gradle / Maven
+---
 
-Git
+## 🛠 Technologie
+
+- Java 21+  
+- IntelliJ IDEA / VS Code  
+- Gradle / Maven  
+- Git
+
+---
+
+## 👨‍💻 Autor
+
+Repozytorium edukacyjne w ramach ścieżki Java Developer.  
+Każdy projekt to krok w kierunku coraz lepszego rozumienia praktyk programistycznych.
