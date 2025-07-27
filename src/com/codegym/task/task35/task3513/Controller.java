@@ -13,11 +13,15 @@ public class Controller extends KeyAdapter {
         this.model = model;
     }
 
+    public View getView() {
+        return view;
+    }
+
     public Tile[][] getGameTiles() {
         return model.getGameTiles();
     }
 
-    public int getScore(){
+    public int getScore() {
         return model.score;
     }
 
@@ -43,6 +47,15 @@ public class Controller extends KeyAdapter {
                     break;
                 case KeyEvent.VK_UP:
                     model.up();
+                    break;
+                case KeyEvent.VK_A:
+                    model.autoMove();
+                    break;
+                case KeyEvent.VK_R:
+                    model.randomMove();
+                    break;
+                case KeyEvent.VK_Z:
+                    model.rollback();
                     break;
             }
         }
