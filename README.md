@@ -34,3 +34,4 @@ Traktuję je jako **bazę pod większe aplikacje**, projekty własne oraz przysz
 
 Repozytorium edukacyjne w ramach ścieżki Java Developer.  
 Każdy projekt to krok w kierunku coraz lepszego rozumienia praktyk programistycznych.
+ 
