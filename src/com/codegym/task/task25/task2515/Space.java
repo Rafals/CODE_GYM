@@ -1,8 +1,8 @@
 package com.codegym.task.task25.task2515;
 
 import java.awt.event.KeyEvent;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The game's main class is Space
@@ -93,7 +93,7 @@ public class Space {
      * The method returns a single list that contains all objects in the game
      */
     public List<BaseObject> getAllItems() {
-        ArrayList<BaseObject> list = new ArrayList<>(ufos);
+        ArrayList<BaseObject> list = new ArrayList<BaseObject>(ufos);
         list.add(ship);
         list.addAll(bombs);
         list.addAll(rockets);
@@ -104,8 +104,14 @@ public class Space {
      * Create a new UFO. Once in every 10 calls.
      */
     public void createUfo() {
-        // You need to create a new UFO.
-        // Once in every 10 calls.
+        if (ufos.size() > 0) return;
+
+        int random10 = (int) (Math.random() * 10);
+        if (random10 == 0) {
+            double x = Math.random() * width;
+            double y = Math.random() * height / 2;
+            ufos.add(new Ufo(x, y));
+        }
     }
 
     /**
@@ -114,7 +120,15 @@ public class Space {
      * b) movement beyond the bottom of the game field (the bomb dies)
      */
     public void checkBombs() {
-        // Here you need to check all possible collisions for each bomb.
+        for (Bomb bomb : bombs) {
+            if (ship.intersects(bomb)) {
+                ship.die();
+                bomb.die();
+            }
+
+            if (bomb.getY() >= height)
+                bomb.die();
+        }
     }
 
     /**
@@ -123,15 +137,37 @@ public class Space {
      * b) movement beyond the top of the playing field (the rocket dies)
      */
     public void checkRockets() {
-        // Here you need to check all possible collisions for each rocket.
+        for (Rocket rocket : rockets) {
+            for (Ufo ufo : ufos) {
+                if (ufo.intersects(rocket)) {
+                    ufo.die();
+                    rocket.die();
+                }
+            }
+
+            if (rocket.getY() <= 0)
+                rocket.die();
+        }
     }
 
     /**
      * Remove dead objects (bombs, rockets, ufos) from the lists
      */
     public void removeDead() {
-        // Here you need to remove all dead objects from the lists.
-        // Except the spaceship — we use it to determine whether the game is still going.
+        for (BaseObject object : new ArrayList<BaseObject>(bombs)) {
+            if (!object.isAlive())
+                bombs.remove(object);
+        }
+
+        for (BaseObject object : new ArrayList<BaseObject>(rockets)) {
+            if (!object.isAlive())
+                rockets.remove(object);
+        }
+
+        for (BaseObject object : new ArrayList<BaseObject>(ufos)) {
+            if (!object.isAlive())
+                ufos.remove(object);
+        }
     }
 
     /**
@@ -140,7 +176,26 @@ public class Space {
      * b) draw all the objects on the canvas.
      */
     public void draw(Canvas canvas) {
-        // Here you need to draw all game objects
+        // Draw the game
+        for (int i = 0; i < width + 2; i++) {
+            for (int j = 0; j < height + 2; j++) {
+                canvas.setPoint(i, j, '.');
+            }
+        }
+
+        for (int i = 0; i < width + 2; i++) {
+            canvas.setPoint(i, 0, '-');
+            canvas.setPoint(i, height + 1, '-');
+        }
+
+        for (int i = 0; i < height + 2; i++) {
+            canvas.setPoint(0, i, '|');
+            canvas.setPoint(width + 1, i, '|');
+        }
+
+        for (BaseObject object : getAllItems()) {
+            object.draw(canvas);
+        }
     }
 
 
