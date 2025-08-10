@@ -1,7 +1,19 @@
 package com.codegym.task.task25.task2515;
 
 public class Spaceship extends BaseObject {
-    public Spaceship(double x, double y, double radius) {
-        super(x, y, radius);
+    private double dx = 0;
+
+
+
+    public Spaceship(double x, double y) {
+        super(x, y, 3);
+    }
+
+    public void moveLeft() {
+        dx = -1;
+    }
+
+    public void moveRight() {
+        dx = 1;
     }
 }
